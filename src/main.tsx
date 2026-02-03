@@ -2,16 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import './styles/globals.css';
-import './i18n/i18n';
+import './index.css';
 
-// PWA auto-update (silent)
-import { registerSW } from 'virtual:pwa-register';
-registerSW({ immediate: true });
+// ✅ چون پروژه روی GitHub Pages داخل مسیر /DKA-management/ سرو می‌شود
+// این باعث می‌شود لینک‌ها مثل /patients تبدیل شوند به /DKA-management/patients
+const repoBase = '/DKA-management';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={repoBase}>
       <App />
     </BrowserRouter>
   </React.StrictMode>
