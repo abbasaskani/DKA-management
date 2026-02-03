@@ -1,12 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=./" />
+    <meta charset="utf-8" />
     <title>Redirecting...</title>
+    <script>
+      // Redirect all 404s to the app root (GitHub Pages SPA fix)
+      const repo = '/DKA-management';
+      const path = window.location.pathname;
+      const newUrl = repo + '/?p=' + encodeURIComponent(path.replace(repo, '')) + window.location.search + window.location.hash;
+      window.location.replace(newUrl);
+    </script>
   </head>
-  <body>
-    Redirecting...
-  </body>
+  <body></body>
 </html>
-
