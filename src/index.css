@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* فونت و رندر بهتر */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
